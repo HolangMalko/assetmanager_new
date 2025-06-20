@@ -1,0 +1,281 @@
+/* style.qss */
+
+/* 전체적인 애플리케이션 스타일 */
+* {
+    font-family: "Malgun Gothic", "맑은 고딕", sans-serif;
+    font-size: 12px; /* 전체 폰트 사이즈 유지 */
+    /* 'box-shadow' 속성 제거 또는 주석 처리 - Qt에서 지원하지 않는 경우 경고 발생 방지 */
+    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); */
+}
+
+QMainWindow {
+    background-color: #f0f2f5; /* 밝은 회색 배경 */
+}
+
+/* 탭 위젯 스타일 */
+QTabWidget::pane {
+    border: 1px solid #c0c0c0;
+    background-color: #ffffff; /* 탭 콘텐츠 영역 배경 흰색 */
+    border-radius: 8px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+QTabBar::tab {
+    background: #e0e0e0; /* 비활성 탭 배경 */
+    border: 1px solid #c0c0c0;
+    border-bottom-color: #e0e0e0; /* 선택된 탭 아래 선이 보이지 않도록 */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    min-width: 100px;
+    padding: 8px 15px;
+    margin-right: 2px;
+    color: #333333; /* 탭 텍스트 색상 */
+    /* box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); */
+}
+
+QTabBar::tab:selected {
+    background: #ffffff; /* 활성 탭 배경 흰색 */
+    border-bottom-color: #ffffff; /* 선택된 탭의 아래 선을 콘텐츠 배경색과 동일하게 */
+    color: #007bff; /* 활성 탭 텍스트 색상 (파란색) */
+    font-weight: bold;
+}
+
+QTabBar::tab:hover {
+    background: #f0f0f0; /* 탭 호버 시 배경 */
+}
+
+/* 탭 닫기 버튼 스타일 */
+QTabWidget::close-button {
+    image: url(close_icon.png); /* 실제 아이콘 경로로 변경 필요 */
+    subcontrol-origin: padding;
+    subcontrol-position: right;
+}
+
+/* 새 탭 추가 버튼 (cornerWidget) */
+#addTabButton {
+    background-color: #007bff; /* 파란색 유지 */
+    border: none;
+    border-radius: 15px; /* 원형 버튼 */
+    color: white;
+    font-size: 16px;
+    padding: 2px;
+    margin-left: 5px;
+    margin-bottom: 2px;
+    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); */
+}
+
+#addTabButton:hover {
+    background-color: #0056b3;
+}
+
+#addTabButton:pressed {
+    background-color: #004085;
+    /* box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3); */
+}
+
+
+/* QLineEdit (텍스트 입력 박스) 스타일 */
+QLineEdit {
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+    color: #333333;
+    selection-background-color: #007bff;
+    selection-color: white;
+}
+
+QLineEdit:focus {
+    border: 1px solid #007bff;
+}
+
+/* QPushButton (버튼) 스타일 - +,- 버튼 제외한 전체 버튼에 적용 */
+QPushButton {
+    background-color: #f0f0f0; /* 중립적인 회색 */
+    color: #333333; /* 버튼 텍스트 색상 */
+    border: 1px solid #c0c0c0; /* 테두리 추가 */
+    border-radius: 5px;
+    padding: 6px 12px; /* 기본 버튼 패딩 */
+    margin: 3px;
+    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+QPushButton:hover {
+    background-color: #e0e0e0;
+}
+
+QPushButton:pressed {
+    background-color: #d0d0d0;
+    /* box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2); */
+}
+
+/* 자산 정보 입력 UI 내의 '계산기' 버튼 텍스트 사이즈 및 패딩 조정 */
+#calculatorButton {
+    font-size: 12px; /* 폰트 사이즈 12px 유지 */
+    color: black; /* 텍스트 색상 검은색 유지 */
+    padding: 5px 10px; /* '날짜 기록' 버튼보다 약간 작은 사이즈와 텍스트 가시성 고려 */
+    /* 버튼 자체의 마진 등은 기존 QPushButton 스타일을 따릅니다. */
+}
+
+
+/* QTableWidget 스타일 */
+QTableWidget {
+    background-color: #ffffff;
+    border: 1px solid #c0c0c0;
+    border-radius: 8px;
+    gridline-color: #e0e0e0;
+    selection-background-color: #e0f2ff;
+    selection-color: #333333;
+    alternate-background-color: #f8f8f8;
+}
+
+QHeaderView::section {
+    background-color: #f0f0f0;
+    padding: 5px;
+    border: 1px solid #d0d0d0;
+    font-weight: bold;
+    color: #333333;
+    font-size: 12px;
+}
+
+QTableWidget::item {
+    padding: 5px;
+    font-size: 12px;
+}
+
+QTableWidget::item:selected {
+    background-color: #e0f2ff;
+    color: #333333;
+}
+
+
+/* QDialog (다이얼로그) 스타일 */
+QDialog {
+    background-color: #f0f2f5;
+    border: 1px solid #c0c0c0;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+}
+
+QDialog QLabel {
+    font-size: 12px; /* 다이얼로그 내 QLabel 폰트 사이즈 유지 */
+    margin-top: 6px; /* 라벨 위치를 아래로 6px 내림 */
+}
+
+QDialog QLineEdit {
+    background-color: white; /* 다이얼로그 내 텍스트 박스도 흰색으로 */
+}
+
+/* QAction (메뉴 및 툴바 액션) 스타일 */
+QToolBar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 5px;
+    spacing: 10px;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+QToolBar QToolButton {
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    margin: 2px;
+    color: #333333;
+}
+
+QToolBar QToolButton:hover {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+QToolBar QToolButton:pressed {
+    background-color: #e0e0e0;
+}
+
+/* QMenu (메뉴 바 메뉴) 스타일 */
+QMenuBar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    color: #333333;
+}
+
+QMenuBar::item {
+    padding: 5px 10px;
+    background: transparent;
+}
+
+QMenuBar::item:selected {
+    background-color: #e0e0e0;
+}
+
+QMenu {
+    background-color: #ffffff;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); */
+}
+
+QMenu::item {
+    padding: 5px 20px;
+    color: #333333;
+    font-size: 12px;
+}
+
+QMenu::item:selected {
+    background-color: #007bff;
+    color: white;
+    border-radius: 3px;
+}
+
+QMenu::separator {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 5px 0;
+}
+
+/* QStatusBar (상태 바) 스타일 */
+QStatusBar {
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    color: #333333;
+    padding: 5px;
+    font-size: 12px;
+}
+
+QStatusBar QLabel {
+    color: #333333;
+    /* 만약 "알림 텍스트"가 상태바에 있다면 여기에 margin-top을 추가할 수 있습니다. */
+    /* margin-top: 2px; */
+}
+
+/* QSystemTrayIcon (트레이 아이콘) 메뉴는 OS 기본 스타일에 따름 */
+
+/* QInputDialog (입력 다이얼로그) 내 QLineEdit 스타일 */
+QInputDialog QLineEdit {
+    background-color: white;
+}
+
+/* QMessageBox (메시지 박스) */
+QMessageBox {
+    background-color: #f0f2f5;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+}
+
+QMessageBox QLabel {
+    color: #333333;
+    font-size: 12px;
+    margin-top: 2px; /* 알림 텍스트 위치를 아래로 2px 내림 */
+}
+
+QMessageBox QPushButton {
+    background-color: #f0f0f0;
+    color: #333333;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+QMessageBox QPushButton:hover {
+    background-color: #e0e0e0;
+}
